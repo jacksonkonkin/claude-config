@@ -9,9 +9,9 @@ COMMANDS_DIR="$HOME/.claude/commands"
 
 mkdir -p "$COMMANDS_DIR"
 
-echo "Linking skills from $REPO_DIR/skills/ → $COMMANDS_DIR/"
+echo "Linking skills from $REPO_DIR/skills/ and $REPO_DIR/cowork/ → $COMMANDS_DIR/"
 
-for skill in "$REPO_DIR"/skills/*.md; do
+for skill in "$REPO_DIR"/skills/*.md "$REPO_DIR"/cowork/*.md; do
   name="$(basename "$skill")"
   # Skip README
   [ "$name" = "README.md" ] && continue
